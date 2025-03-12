@@ -13,6 +13,6 @@ let schema = Schema({
     timestamps:true
 });
 
-let Stroe = model(collection,schema);
+let Store = model(collection, schema);
 
-export default Stroe
+export default Store
