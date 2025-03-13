@@ -1,9 +1,13 @@
 import { Router } from "express";
-import { allStores } from "../controller/store/read.js";
+import storesRouter from "./storeRouter.js"
+import productsRouter from "./productsRouter.js"
+import employeesRouter from "./employeesRouter.js"
 
 
 const routerIndex = Router();
 
-routerIndex.use("/stores", allStores)
+routerIndex.use("/stores", storesRouter);
+routerIndex.use("/products", productsRouter);
+routerIndex.use("/employees", employeesRouter);
 
 export default routerIndex;

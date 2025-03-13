@@ -1,8 +1,8 @@
-import Store from "../../models/Store.js"
+import Product from "../../models/Product.js"
 
-let allStores = async (request, response, next)=>{
+let allProducts = async (request, response, next)=>{
     try {
-        let all = await Store.find();
+        let all = await Product.find();
         response.status(200).json({
             response: all
         })
@@ -13,9 +13,9 @@ let allStores = async (request, response, next)=>{
     }
 }
 
-let storeByName = async (request, response, next)=> { 
+let productByName = async (request, response, next)=> { 
     try {
-        let nameQuery = await Store.find({name: request.params.nameParams})
+        let nameQuery = await Product.find({name: request.params.nameParams})
         response.status(200).json({
             response: nameQuery
         })
@@ -26,11 +26,11 @@ let storeByName = async (request, response, next)=> {
     }
 }
 
-let storeActive = async (request, response, next)=> { 
+let ProductInStock = async (request, response, next)=> { 
     try {
-        let activeQuery = await Store.find({active: request.params.activeParams})
+        let inStockQuery = await Product.find({inStock: request.params.inStockParams})
         response.status(200).json({
-            response: activeQuery
+            response: inStockQuery
         })
     } catch (error) {
         response.status(500).json({
@@ -39,4 +39,4 @@ let storeActive = async (request, response, next)=> {
     }
 }
 
-export { allStores, storeByName, storeActive }
+export { allProducts, productByName, ProductInStock }
