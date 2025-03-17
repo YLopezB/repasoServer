@@ -3,26 +3,22 @@ import Employee from "../../models/Employee.js";
 let createEmployee = async (request, response, next) => {
     try {
         let create = await Employee.create(request.body)
-        response.status(201).json({
+        return response.status(201).json({
             response: create
         })
     } catch (error) {
-        response.status(500).json({
-            response: error
-        })
+        next(error);
     }
 }
 
 let insertManyEmployees = async (request, response, next) => {
     try {
         let manyEmployees = await Employee.insertMany(request.body)
-        response.status(201).json({
+        return response.status(201).json({
             response: manyEmployees
         })
     } catch (error) {
-        response.status(500).json({
-            response: error
-        })
+        next(error);
     }
 }
 
