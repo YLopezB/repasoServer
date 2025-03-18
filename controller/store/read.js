@@ -13,9 +13,6 @@ let allStores = async (request, response, next)=>{
 
 let storeByName = async (request, response, next)=> { 
     try {
-        if (!request.params.nameParams) {
-            throw new Error('bad request'); 
-        }
         let nameQuery = await Store.find({name: request.params.nameParams})
         return response.status(200).json({
             response: nameQuery
@@ -27,9 +24,6 @@ let storeByName = async (request, response, next)=> {
 
 let storeActive = async (request, response, next)=> { 
     try {
-        if (request.params.activeParams !== "true" && request.params.activeParams !== "false") {
-            throw new Error('bad request');
-        }
         let activeQuery = await Store.find({active: request.params.activeParams})
         return response.status(200).json({
             response: activeQuery
