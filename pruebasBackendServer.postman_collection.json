@@ -1,0 +1,400 @@
+{
+	"info": {
+		"_postman_id": "cc850a92-3c5d-41fd-a160-684d858b83af",
+		"name": "pruebasBackendServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39830214"
+	},
+	"item": [
+		{
+			"name": "Store",
+			"item": [
+				{
+					"name": "allStores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/stores/allStores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"stores",
+								"allStores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StoreByname",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/stores/name/ElectroShop Express",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"stores",
+								"name",
+								"ElectroShop Express"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StoreActive",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/stores/active/false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"stores",
+								"active",
+								"false"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createStore",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"name\": \"Nueva Tienda\",\r\n        \"address\": \"Calle 123\",\r\n        \"city\": \"Ciudad de Valle\",\r\n        \"phone\": 9876543210,\r\n        \"email\": \"nuevatienda@nuevatienda.com\",\r\n        \"webSite\": \"https://www.nuevatienda.com\",\r\n        \"active\": false\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/stores/storeCreate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"stores",
+								"storeCreate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insertManyStores",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"name\": \"Store Central\",\r\n        \"address\": \"Av. 123\",\r\n        \"city\": \"Ciudad de Acapulco\",\r\n        \"phone\": 5551234367,\r\n        \"email\": \"contacto@storecentral.com\",\r\n        \"webSite\": \"https://www.storecentral.com\",\r\n        \"active\": true\r\n    },\r\n    {\r\n        \"name\": \"Shop Express\",\r\n        \"address\": \"Calle 45 #678\",\r\n        \"city\": \"Monterrey\",\r\n        \"phone\": 8187654561,\r\n        \"email\": \"ventas@shopexpress.com\",\r\n        \"webSite\": \"https://www.shopexpress.com\",\r\n        \"active\": true\r\n    },\r\n    {\r\n        \"name\": \"Mundo Gadget\",\r\n        \"address\": \"Carrera 10 #55-30\",\r\n        \"city\": \"Bogota\",\r\n        \"phone\": 6019878043,\r\n        \"email\": \"info@mundogadget.com\",\r\n        \"webSite\": \"https://www.mundogadget.com\",\r\n        \"active\": false\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/stores/insertMany",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"stores",
+								"insertMany"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "allProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products/allProducts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"allProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products/name/GoPro Hero 11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"name",
+								"GoPro Hero 11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductInStock",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products/inStock/false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"inStock",
+								"false"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"name\": \"Producto prueba\",\r\n            \"brand\": \"prueba\",\r\n            \"type\": \"portatil\",\r\n            \"price\": 2845.39,\r\n            \"description\": \"La mejor Api Rest.\",\r\n            \"image\": \"https://prueba.com/image0.jpg\",\r\n            \"inStock\": true\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products/createProduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"createProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insertManyProducts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n        {\r\n            \"name\": \"Producto prueba\",\r\n            \"brand\": \"prueba\",\r\n            \"type\": \"portatil\",\r\n            \"price\": 2845.39,\r\n            \"description\": \"La mejor Api Rest.\",\r\n            \"image\": \"https://prueba.com/image0.jpg\",\r\n            \"inStock\": true\r\n        },\r\n                {\r\n            \"name\": \"Producto prueba2\",\r\n            \"brand\": \"prueba2\",\r\n            \"type\": \"portatil2\",\r\n            \"price\": 2845.39,\r\n            \"description\": \"Siempre esfuerzate por ser el mejor.\",\r\n            \"image\": \"https://elmejordev.com/image0.jpg\",\r\n            \"inStock\": true\r\n        }\r\n]        \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products/insertMany",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"insertMany"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "allEmployees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/employees/allEmployees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employees",
+								"allEmployees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EmployeesByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/employees/name/Carlos Pérez",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employees",
+								"name",
+								"Carlos Pérez"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EmployeesActive",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/employees/active/true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employees",
+								"active",
+								"true"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateEmployee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"name\": \"Yeison Lopez\",\r\n            \"job\": \"FullStack MERN\",\r\n            \"salary\": 500,\r\n            \"gender\": \"Masculino\",\r\n            \"active\": true\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/employees/employeeCreate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employees",
+								"employeeCreate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insertManyEmployees",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n        {\r\n            \"name\": \"Andres Burbano\",\r\n            \"job\": \"Administrador Base de datos\",\r\n            \"salary\": 5000,\r\n            \"gender\": \"Masculino\",\r\n            \"active\": true\r\n        },\r\n                {\r\n            \"name\": \"Stefani Zapata\",\r\n            \"job\": \"Psicologa junior\",\r\n            \"salary\": 2560,\r\n            \"gender\": \"Femenino\",\r\n            \"active\": true\r\n        },\r\n                {\r\n            \"name\": \"Juan Lopez\",\r\n            \"job\": \"Contador Publico\",\r\n            \"salary\": 1500,\r\n            \"gender\": \"Masculino\",\r\n            \"active\": false\r\n        }\r\n]        ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/employees/insertMany",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employees",
+								"insertMany"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

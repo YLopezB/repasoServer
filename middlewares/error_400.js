@@ -3,7 +3,7 @@ const error_400 = (error, request, response, next)=>{
         return response.status(400).json({
             success: false,
             message: "error",
-            response: error,
+            response: "bad request"
         })
     }
 } 

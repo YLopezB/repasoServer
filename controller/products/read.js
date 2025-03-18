@@ -13,6 +13,9 @@ let allProducts = async (request, response, next)=>{
 
 let productByName = async (request, response, next)=> { 
     try {
+        if (!request.params.nameParams) {
+            throw new Error('bad request'); 
+        }
         let nameQuery = await Product.find({name: request.params.nameParams})
         return response.status(200).json({
             response: nameQuery
@@ -24,6 +27,9 @@ let productByName = async (request, response, next)=> {
 
 let ProductInStock = async (request, response, next)=> { 
     try {
+        if (request.params.inStockParams !== "true" && request.params.inStockParams !== "false") {
+            throw new Error('bad request');
+        }
         let inStockQuery = await Product.find({inStock: request.params.inStockParams})
         return response.status(200).json({
             response: inStockQuery
