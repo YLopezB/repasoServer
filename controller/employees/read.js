@@ -13,9 +13,6 @@ let allEmployees = async (request, response, next)=>{
 
 let employeeByName = async (request, response, next)=>{
     try {
-        if (!request.params.nameParams) {
-            throw new Error('bad request'); 
-        }
         let nameQuery = await Employee.find({name: request.params.nameParams})
         return response.status(200).json({
             response: nameQuery
@@ -27,9 +24,6 @@ let employeeByName = async (request, response, next)=>{
 
 let employeeActive = async (request, response, next)=>{
     try {
-        if (request.params.activeParams !== "true" && request.params.activeParams !== "false") {
-            throw new Error('bad request');
-        }
         let activeQuery = await Employee.find({active: request.params.activeParams})
         return response.status(200).json({
             response: activeQuery
